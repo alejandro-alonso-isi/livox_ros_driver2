@@ -29,7 +29,7 @@ default_extrinsics_hap = {
     "x": 0,
     "y": 0,
     "z": 0
-},
+}
 default_extrinsics_front ={
     "roll": 0.0,
     "pitch": 0.0,
@@ -37,7 +37,7 @@ default_extrinsics_front ={
     "x": 0,
     "y": 0,
     "z": 0
-},
+}
 default_extrinsics_rear = {
     "roll": 0.0,
     "pitch": 0.0,
@@ -45,7 +45,7 @@ default_extrinsics_rear = {
     "x": 0,
     "y": 0,
     "z": 0
-},
+}
 
 
 format_config = {
@@ -116,7 +116,6 @@ format_config = {
       ]
 }
 
-
 cur_path = os.path.split(os.path.realpath(__file__))[0] + '/'
 cur_config_path = cur_path + '../config'
 user_config_path = os.path.join(cur_config_path, 'final_config.json')
@@ -126,8 +125,6 @@ if not os.path.exists(user_config_path):
     with open(user_config_path, 'w') as json_file:
         json.dump(format_config, json_file, indent=2)
     # print(f"Arquivo salvo em: {user_config_path}")
-else:
-    # print(f"O arquivo {user_config_path} já existe. Nenhuma ação foi tomada.")
 
 def generate_launch_description():
     DeclareLaunchArgument('xfer_format', default_value='0', description='Transfer format (0-Pointcloud2, 1-customized)')
